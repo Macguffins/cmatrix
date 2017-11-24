@@ -21,10 +21,14 @@
 int main(){
 	int i;
 	struct mgraph graph;
-	graph=init(5);
-	for(i=0;i<5;++i){
-		set(i,i,&graph);
-	}
+	graph=init(6);
+	set(0,1,&graph);
+	set(1,2,&graph);
+	set(2,3,&graph);
+	set(3,4,&graph);
+	set(4,5,&graph);
+	set(0,5,&graph);
 	printg(&graph);
+	printf("%s bipartite\n",isbipart(&graph) == -1?"It's not":"It's");
 	return 1;
 }

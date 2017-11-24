@@ -37,5 +37,7 @@ int set(int, int, struct mgraph*);
 char get(int , int , struct mgraph*);
 int clear(int, int , struct mgraph*);
 void printg(struct mgraph*);
+int isbipart(struct mgraph *);
+
 
 #endif
