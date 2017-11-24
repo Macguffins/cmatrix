@@ -53,5 +53,6 @@ int missym(struct matrix *A);
 int mplus(struct matrix *A, struct matrix *B, struct matrix *R);
 int mjoin(struct matrix *A, struct matrix *B, struct matrix *R);
 int mbproduct(struct matrix *A, struct matrix *B, struct matrix *R);
+void minverse(struct matrix *A, struct matrix *R);
 
 #endif

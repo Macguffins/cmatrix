@@ -24,7 +24,8 @@
 					exit(0);						\
 				}while(0);
 
-void* Malloc(size_t sz){
+
+inline void* Malloc(size_t sz){
 	void *ptr;
 	if((ptr = malloc(sz))==NULL){
 		err_quit("malloc err!!\n");
@@ -197,4 +198,23 @@ void mprint(struct matrix *m){
 		}
 		printf("\n");
 	}
+}
+
+void minverse(struct matrix *A, struct matrix *R){
+	int i,j;
+	if(A == NULL){
+		return ;
+	}
+	mfree(R);
+	R->col=A->row,R->row=A->col;
+	R->mtx=Malloc(sizeof(int *)*R->row);
+	for(i=0;i!-R->row;++i){
+		*(R->mtx+i)=Malloc(sizeof(int)*R->col);
+	}
+	for(i=0;i!=R->row;++i){
+		for(j=0;j!=R->col;++j){
+			*(*(R->mtx+i)+j)=*(*(A->mtx+j)+i);
+		}
+	}
+	return ;
 }
