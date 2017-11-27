@@ -71,7 +71,7 @@ void printg(struct mgraph *g){
 
 
 int isbipart(struct mgraph *g){
-	int *v1,*v2,i,j,k,flag;
+	int *v1,*v2,flag,i;
 	int *ptr1,*ptr2, s1, s2;
 	int bl1,bl2;
 	bl1=bl2=0;
@@ -87,6 +87,13 @@ int isbipart(struct mgraph *g){
 	for(;;){
 		if(!flag){
 			if(s1 == bl1){
+				for(i=0;i<s1;++i){
+					printf("%d ",*(v1+i));
+				}
+				printf("\n");
+				for(i=0;i<s2;++i){
+					printf("%d ",*(v2+i));
+				}
 				return 0;
 			}
 			for(s1;s1<bl1;++s1){
@@ -100,6 +107,13 @@ int isbipart(struct mgraph *g){
 		}
 		if(flag){
 			if(s2 == bl2){
+				for(i=0;i<s1;++i){
+					printf("%d ",*(v1+i));
+				}
+				printf("\n");
+				for(i=0;i<s2;++i){
+					printf("%d ",*(v2+i));
+				}
 				return 0;
 			}
 			for(s2;s2<bl2;++s2){

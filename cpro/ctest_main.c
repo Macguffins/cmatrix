@@ -19,7 +19,6 @@
 #include"ctest.h"
 
 int main(){
-	int i;
 	struct mgraph graph;
 	graph=init(6);
 	set(0,1,&graph);
